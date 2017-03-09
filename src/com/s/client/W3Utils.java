@@ -109,8 +109,10 @@ public class W3Utils {
 	}
 	
 	public static void populateHTTPHeaders(final HttpRequestBase request, final long timestamp, final String hmac, final String txId) {
-		request.addHeader("SCALE_TS", String.valueOf(timestamp));
-		request.addHeader("SCALE_HMAC", hmac);
-		request.addHeader("SCALE_TX_ID", txId);
+		request.addHeader("Content-Type", "application/json");
+		
+		request.addHeader("<TIMESTAMP HEADER NAME HERE>", String.valueOf(timestamp));
+		request.addHeader("<HMAC HEADER NAME HERE>", hmac);
+		request.addHeader("<TX ID HEADER NAME HERE>", txId);
 	}
 }
